@@ -13,11 +13,7 @@ app.get('/news', async (req, res) => {
 
   let url = '';
 
- if (q) {
-  url = `https://newsapi.org/v2/everything?q=${q}&sortBy=publishedAt&pageSize=10&apiKey=${API_KEY}`;
-} else {
-  url = `https://newsapi.org/v2/everything?q=india&sortBy=publishedAt&pageSize=10&apiKey=${API_KEY}`;
-}}
+ url = `https://newsapi.org/v2/everything?q=tesla&from=2024-01-01&sortBy=publishedAt&pageSize=10&apiKey=${API_KEY}`;
 
   const response = await fetch(url);
   const data = await response.json();
