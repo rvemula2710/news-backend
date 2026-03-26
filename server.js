@@ -13,11 +13,11 @@ app.get('/news', async (req, res) => {
 
   let url = '';
 
-  if (q) {
-    url = `https://newsapi.org/v2/everything?q=${q}&apiKey=${API_KEY}`;
-  } else {
-    url = `url = `https://newsapi.org/v2/top-headlines?country=in&pageSize=10&apiKey=${API_KEY}`;
-  }
+ if (q) {
+  url = `https://newsapi.org/v2/everything?q=${q}&sortBy=publishedAt&pageSize=10&apiKey=${API_KEY}`;
+} else {
+  url = `https://newsapi.org/v2/everything?q=india&sortBy=publishedAt&pageSize=10&apiKey=${API_KEY}`;
+}}
 
   const response = await fetch(url);
   const data = await response.json();
