@@ -16,7 +16,7 @@ app.get('/news', async (req, res) => {
   if (q) {
     url = `https://newsapi.org/v2/everything?q=${q}&apiKey=${API_KEY}`;
   } else {
-    url = `https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=${API_KEY}`;
+    url = `url = `https://newsapi.org/v2/top-headlines?country=in&pageSize=10&apiKey=${API_KEY}`;
   }
 
   const response = await fetch(url);
