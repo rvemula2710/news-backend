@@ -8,11 +8,9 @@ app.use(cors());
 const API_KEY = process.env.API_KEY;
 
 app.get('/news', async (req, res) => {
-  const category = req.query.category || '';
-  const q = req.query.q || '';
+  const q = req.query.q || 'general';
 
- const url = `https://newsapi.org/v2/everything?q=apple&sortBy=publishedAt&pageSize=10&language=en&apiKey=${API_KEY}`;
-
+const url = `https://newsapi.org/v2/everything?q=${q}&sortBy=publishedAt&pageSize=10&language=en&apiKey=${API_KEY}`;
   const response = await fetch(url);
   const data = await response.json();
 console.log(data);
