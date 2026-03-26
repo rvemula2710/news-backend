@@ -11,8 +11,6 @@ app.get('/news', async (req, res) => {
   const category = req.query.category || '';
   const q = req.query.q || '';
 
-  
-
  const url = `https://newsapi.org/v2/everything?q=apple&sortBy=publishedAt&pageSize=10&language=en&apiKey=${API_KEY}`;
 
   const response = await fetch(url);
